@@ -1,33 +1,83 @@
+.columns {
+  padding: 32px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .columns > div {
   display: flex;
-  flex-direction: column;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
-.columns img {
+.columns .column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.columns .column img {
   width: 100%;
+  height: auto;
 }
 
-.columns > div > div {
-  order: 1;
+/* Single column (full width) */
+.columns-1-cols .column,
+.columns-1-col .column {
+  flex: 1 1 100%;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
+/* Two columns (50/50) */
+.columns-2-cols .column,
+.columns-2-col .column {
+  flex: 0 0 calc(50% - 16px);
 }
 
-.columns > div > .columns-img-col img {
-  display: block;
+/* Two columns asymmetric (66/33) */
+.columns-2-col-left .column:first-child {
+  flex: 0 0 calc(66.666% - 16px);
 }
 
-@media (width >= 900px) {
+.columns-2-col-left .column:last-child {
+  flex: 0 0 calc(33.333% - 16px);
+}
+
+/* Two columns asymmetric (33/66) */
+.columns-2-col-right .column:first-child {
+  flex: 0 0 calc(33.333% - 16px);
+}
+
+.columns-2-col-right .column:last-child {
+  flex: 0 0 calc(66.666% - 16px);
+}
+
+/* Three columns (33/33/33) */
+.columns-3-cols .column,
+.columns-3-col .column {
+  flex: 0 0 calc(33.333% - 22px);
+}
+
+/* Four columns (25/25/25/25) */
+.columns-4-cols .column,
+.columns-4-col .column {
+  flex: 0 0 calc(25% - 24px);
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: column;
   }
+  
+  .columns .column {
+    flex: 1 1 100% !important;
+    max-width: 100%;
+  }
+}
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+/* Responsive: 2 columns on tablet for 4-col layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .columns-4-cols .column,
+  .columns-4-col .column {
+    flex: 0 0 calc(50% - 16px);
   }
 }

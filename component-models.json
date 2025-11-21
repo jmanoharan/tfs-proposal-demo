@@ -1,46 +1,74 @@
 [
   {
-    "id": "page-metadata",
+    "id": "button",
     "fields": [
       {
         "component": "text",
-        "valueType": "string",
-        "name": "jcr:title",
-        "label": "Title"
+        "name": "text",
+        "label": "Button Text",
+        "required": true
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "jcr:description",
-        "label": "Description"
+        "name": "link",
+        "label": "Link URL",
+        "required": true
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "keywords",
-        "multi": true,
-        "label": "Keywords"
+        "component": "select",
+        "name": "variant",
+        "label": "Button Style",
+        "options": [
+          {
+            "label": "Primary",
+            "value": "primary"
+          },
+          {
+            "label": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "label": "Outlined",
+            "value": "outlined"
+          },
+          {
+            "label": "Text",
+            "value": "text"
+          },
+          {
+            "label": "Ghost",
+            "value": "ghost"
+          },
+          {
+            "label": "Default",
+            "value": "default"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "image",
+    "id": "hero",
     "fields": [
       {
         "component": "reference",
         "name": "image",
-        "label": "Image",
-        "multi": false
+        "label": "Hero Image"
       },
       {
         "component": "text",
         "name": "imageAlt",
-        "label": "Alt Text"
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Hero Text"
       }
     ]
   },
   {
-    "id": "title",
+    "id": "cards",
     "fields": [
       {
         "component": "text",
@@ -48,72 +76,99 @@
         "label": "Title"
       },
       {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
+        "component": "multifield",
+        "name": "cards",
+        "label": "Cards",
+        "fields": [
           {
-            "name": "h1",
-            "value": "h1"
+            "component": "reference",
+            "name": "image",
+            "label": "Card Image"
           },
           {
-            "name": "h2",
-            "value": "h2"
+            "component": "text",
+            "name": "title",
+            "label": "Card Title"
           },
           {
-            "name": "h3",
-            "value": "h3"
+            "component": "richtext",
+            "name": "text",
+            "label": "Card Text"
           },
           {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
+            "component": "text",
+            "name": "link",
+            "label": "Card Link"
           }
         ]
       }
     ]
   },
   {
-    "id": "button",
+    "id": "columns",
     "fields": [
       {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
+        "component": "number",
+        "name": "columnCount",
+        "label": "Number of Columns",
+        "min": 2,
+        "max": 4
       },
+      {
+        "component": "multifield",
+        "name": "columns",
+        "label": "Column Content",
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "content",
+            "label": "Column Content"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "fields": [
       {
         "component": "text",
-        "name": "linkText",
-        "label": "Text"
-      },
+        "name": "content",
+        "label": "Content",
+        "multi": true
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "fields": [
       {
         "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
+        "name": "content",
+        "label": "Content",
+        "multi": true
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "number",
+        "name": "columnCount",
+        "label": "Number of Columns",
+        "min": 2,
+        "max": 4
       },
       {
-        "component": "select",
-        "name": "linkType",
-        "label": "Type",
-        "options": [
+        "component": "multifield",
+        "name": "columns",
+        "label": "Column Content",
+        "fields": [
           {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
+            "component": "richtext",
+            "name": "content",
+            "label": "Column Content"
           }
         ]
       }
@@ -123,95 +178,21 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
         "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "name": "content",
+        "label": "Section Content",
+        "multi": true
       }
     ]
   },
   {
-    "id": "columns",
+    "id": "embed",
     "fields": [
       {
         "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
-      }
-    ]
-  },
-  {
-    "id": "fragment",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
-      }
-    ]
-  },
-  {
-    "id": "hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "name": "content",
+        "label": "Content",
+        "multi": true
       }
     ]
   }

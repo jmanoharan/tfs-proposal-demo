@@ -1,157 +1,457 @@
 {
+  "title": "Thermo Fisher Components",
+  "lastModified": "2025-11-21",
   "groups": [
     {
-      "title": "Default Content",
-      "id": "default",
+      "title": "Content",
+      "id": "content",
       "components": [
         {
-          "title": "Text",
           "id": "text",
+          "title": "Text",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/text/v1/text",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Title",
-          "id": "title",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/title/v1/title",
+                "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "model": "title"
+                  "model": "text",
+                  "text": "Enter your text here"
                 }
               }
             }
           }
         },
         {
-          "title": "Image",
+          "id": "heading",
+          "title": "Heading",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "model": "heading",
+                  "text": "Heading Text"
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "image",
+          "title": "Image",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/image/v1/image",
-                "template": {}
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "model": "image",
+                  "src": "",
+                  "alt": ""
+                }
               }
             }
           }
         },
         {
-          "title": "Button",
+          "id": "title",
+          "title": "Title",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "model": "title",
+                  "text": "Page Title"
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "button",
+          "title": "Button",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/button/v1/button",
+                "resourceType": "thermofisher/components/button",
                 "template": {
-                  "model": "button"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "title": "Sections",
-      "id": "sections",
-      "components": [
-        {
-          "title": "Section",
-          "id": "section",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "section"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "title": "Blocks",
-      "id": "blocks",
-      "components": [
-        {
-          "title": "Cards",
-          "id": "cards",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Cards",
-                  "filter": "cards"
+                  "text": "Button Text",
+                  "link": "#",
+                  "variant": "primary"
                 }
               }
             }
           }
         },
         {
-          "title": "Card",
-          "id": "card",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Card",
-                  "model": "card"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Columns",
-          "id": "columns",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
-                "template": {
-                  "columns": "2",
-                  "rows": "1"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Fragment",
-          "id": "fragment",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Fragment",
-                  "model": "fragment"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Hero",
           "id": "hero",
+          "title": "Hero",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "thermofisher/components/hero",
                 "template": {
-                  "name": "Hero",
-                  "model": "hero"
+                  "image": "",
+                  "imageAlt": "",
+                  "text": "<h1>Hero Heading</h1>"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Layout",
+      "id": "layout",
+      "components": [
+        {
+          "id": "columns-1",
+          "title": "Single Column",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "1-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-2",
+          "title": "Two Columns (50/50)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "2-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-3",
+          "title": "Three Columns (33/33/33)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "3-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-4",
+          "title": "Four Columns (25/25/25/25)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "4-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-2-left",
+          "title": "Two Columns (66/33)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "2-col-left",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-2-right",
+          "title": "Two Columns (33/66)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "2-col-right",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-1",
+          "title": "Single Column",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "1-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-2",
+          "title": "Two Columns (50/50)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "2-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-3",
+          "title": "Three Columns (33/33/33)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "3-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-4",
+          "title": "Four Columns (25/25/25/25)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "4-col",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-2-left",
+          "title": "Two Columns (66/33)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "2-col-left",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "columns-2-right",
+          "title": "Two Columns (33/66)",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/columns",
+                "template": {
+                  "layout": "2-col-right",
+                  "columns": [
+                    {
+                      "content": ""
+                    },
+                    {
+                      "content": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "section",
+          "title": "Section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/section",
+                "template": {
+                  "content": ""
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Interactive",
+      "id": "interactive",
+      "components": [
+        {
+          "id": "cards",
+          "title": "Cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/cards",
+                "template": {
+                  "cards": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "form",
+          "title": "Form",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/form",
+                "template": {
+                  "formId": ""
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "search",
+          "title": "Search",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/search",
+                "template": {
+                  "query": ""
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "embed",
+          "title": "Embed",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "thermofisher/components/embed",
+                "template": {
+                  "url": ""
                 }
               }
             }

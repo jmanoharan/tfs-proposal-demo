@@ -1,24 +1,47 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
+/*
+ * Cards Block
+ * Displays a grid of cards with image, title, and link
+ */
 export default function decorate(block) {
-  /* change to ul, li */
   const ul = document.createElement('ul');
+  ul.className = 'cards-list';
+  
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
-    moveInstrumentation(row, li);
-    while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
-    });
+    li.className = 'card';
+    
+    const cols = [...row.children];
+    
+    // Image column
+    if (cols[0]) {
+      const imageDiv = document.createElement('div');
+      imageDiv.className = 'card-image';
+      imageDiv.append(...cols[0].childNodes);
+      li.append(imageDiv);
+    }
+    
+    // Title column
+    if (cols[1]) {
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'card-title';
+      titleDiv.append(...cols[1].childNodes);
+      li.append(titleDiv);
+    }
+    
+    // Link column
+    if (cols[2]) {
+      const link = cols[2].querySelector('a');
+      if (link) {
+        li.addEventListener('click', () => {
+          window.location.href = link.href;
+        });
+        li.style.cursor = 'pointer';
+      }
+    }
+    
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
-  });
+  
   block.textContent = '';
   block.append(ul);
 }

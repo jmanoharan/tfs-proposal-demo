@@ -1,42 +1,24 @@
-[
-  {
-    "id": "main",
-    "components": [
-      "section"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  }
-]
+{
+  "id": "thermofisher",
+  "components": [
+    "button",
+    "hero",
+    "cards",
+    "columns-1",
+    "columns-2",
+    "columns-3",
+    "columns-4",
+    "columns-2-left",
+    "columns-2-right",
+    "form",
+    "search",
+    "columns-1",
+    "columns-2",
+    "columns-3",
+    "columns-4",
+    "columns-2-left",
+    "columns-2-right",
+    "section",
+    "embed"
+  ]
+}
