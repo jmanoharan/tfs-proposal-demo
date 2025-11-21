@@ -1,2 +1,6 @@
 mountpoints:
-  /: https://author-p69802-e616155.adobeaemcloud.com/bin/franklin.delivery/jmanoharan/tfs-proposal-demo/main/content/thermofisher
+  /us/en: https://author-p69802-e616155.adobeaemcloud.com/bin/franklin.delivery/jmanoharan/tfs-proposal-demo/main/content/thermofisher/us/en
+  /de/en: https://author-p69802-e616155.adobeaemcloud.com/bin/franklin.delivery/jmanoharan/tfs-proposal-demo/main/content/thermofisher/de/en
+  /fr/fr: https://author-p69802-e616155.adobeaemcloud.com/bin/franklin.delivery/jmanoharan/tfs-proposal-demo/main/content/thermofisher/fr/fr
+  # Add more locales as needed:
+  # /it/it: https://author-p69802-e616155.adobeaemcloud.com/bin/franklin.delivery/jmanoharan/tfs-proposal-demo/main/content/thermofisher/it/it
