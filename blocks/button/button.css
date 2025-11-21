@@ -17,9 +17,9 @@
 
 /* Button Variants */
 .button-primary {
-  background: #0066cc;
+  background: #06c;
   color: white;
-  border-color: #0066cc;
+  border-color: #06c;
 }
 
 .button-primary:hover {
@@ -40,23 +40,23 @@
 
 .button-outlined {
   background: transparent;
-  color: #0066cc;
-  border-color: #0066cc;
+  color: #06c;
+  border-color: #06c;
 }
 
 .button-outlined:hover {
-  background: #0066cc;
+  background: #06c;
   color: white;
 }
 
 .button-text {
   background: transparent;
-  color: #0066cc;
+  color: #06c;
   padding: 8px 16px;
 }
 
 .button-text:hover {
-  background: rgba(0, 102, 204, 0.1);
+  background: rgb(0 102 204 / 10%);
 }
 
 .button-ghost {
@@ -66,7 +66,7 @@
 }
 
 .button-ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255 255 255 / 10%);
 }
 
 .button-default {

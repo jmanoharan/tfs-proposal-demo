@@ -16,13 +16,13 @@
   padding: 20px 0;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .hero {
     display: flex;
     gap: 32px;
     align-items: center;
   }
-  
+
   .hero > div {
     flex: 1;
   }

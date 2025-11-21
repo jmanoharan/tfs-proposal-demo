@@ -22,11 +22,11 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .section {
     padding: 48px 0;
   }
-  
+
   .section-container {
     padding: 0 32px;
   }

@@ -32,7 +32,19 @@
   flex: 0 0 calc(50% - 16px);
 }
 
-/* Two columns asymmetric (66/33) */
+/* Three columns (33/33/33) */
+.columns-3-cols .column,
+.columns-3-col .column {
+  flex: 0 0 calc(33.333% - 22px);
+}
+
+/* Four columns (25/25/25/25) */
+.columns-4-cols .column,
+.columns-4-col .column {
+  flex: 0 0 calc(25% - 24px);
+}
+
+/* Two columns asymmetric (66/33) - more specific, must come after general rules */
 .columns-2-col-left .column:first-child {
   flex: 0 0 calc(66.666% - 16px);
 }
@@ -50,24 +62,12 @@
   flex: 0 0 calc(66.666% - 16px);
 }
 
-/* Three columns (33/33/33) */
-.columns-3-cols .column,
-.columns-3-col .column {
-  flex: 0 0 calc(33.333% - 22px);
-}
-
-/* Four columns (25/25/25/25) */
-.columns-4-cols .column,
-.columns-4-col .column {
-  flex: 0 0 calc(25% - 24px);
-}
-
 /* Responsive: Stack on mobile */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .columns > div {
     flex-direction: column;
   }
-  
+
   .columns .column {
     flex: 1 1 100% !important;
     max-width: 100%;
@@ -75,7 +75,7 @@
 }
 
 /* Responsive: 2 columns on tablet for 4-col layout */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (769px <= width <= 1024px) {
   .columns-4-cols .column,
   .columns-4-col .column {
     flex: 0 0 calc(50% - 16px);

@@ -1,2 +1,13 @@
-helix-importer-ui
-dompurify.min.js
+node_modules/
+dist/
+build/
+coverage/
+
+# JSON configuration files should not be linted as JavaScript
+*.json
+component-definition.json
+component-filters.json
+component-models.json
+
+# Generated/vendor files
+*.min.js
